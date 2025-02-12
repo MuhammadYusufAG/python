@@ -24,4 +24,58 @@ print(min(angka))
 print(max(angka))
 
 
-# count()
+# count() digunakan untuk mengetahui berapa kali suatu objek muncul dalam list.
+genap = [2, 4, 4, 6, 6, 6, 8, 10, 10]
+print(genap.count(10))
+
+string = "Belajar Python di Dicoding sangat menyenangkan"
+substring = "a"
+print(string.count(substring))
+
+
+# in and Not in
+'''
+merupakan operator yang diperuntukkan untuk mengetahui nilai atau 
+objek yang ada dalam list. Anda bisa menggunakan operator ini untuk 
+memastikan suatu nilai ada dalam list bahkan dalam string. 
+Operator in dan not in akan mengembalikan nilai boolean True atau 
+False. '''
+
+kalimat = "Belajar Python di Dicoding sangat menyenangkan"
+print('Dicoding' in kalimat)
+print('tidak' in kalimat)
+print('Dicoding' not in kalimat)
+print('tidak' not in kalimat)
+
+
+# memberikan nilai untuk multiple variable
+data = ['shirt', 'white', 'L']
+# apparel = data[0]
+# color = data[1]
+# size = data[2]
+apparel, color, size = data
+
+print(data)
+print(apparel)
+print(color)
+print(size)
+
+
+# sort() untuk mengurutkan angka atau urutan huruf.
+kendaraan = ['motor', 'mobil', 'helikopter', 'pesawat']
+kendaraan.sort()
+print(kendaraan)
+
+# tidak bisa mengurutkan yg berisi angka dan string sekaligus didalamnya
+# urutan = ['Dicoding', 1, 2, 'Indonesia', 3]
+# urutan.sort()
+
+# print(urutan)
+# TypeError: '<' not supported between instances of 'int' and 'str'
+
+# Metode sort menggunakan urutan ASCII sehingga nilai huruf kapital (uppercase) akan lebih dahulu dibandingkan huruf kecil (lowercase).
+
+kendaraan = ['motor', 'mobil', 'helikopter', 'Pesawat']
+kendaraan.sort()
+
+print(kendaraan)
