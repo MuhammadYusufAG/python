@@ -8,6 +8,6 @@ Anda bisa menggunakan loop dan if atau list comprehension untuk memudahkan.
 """
 
 # TODO: Silakan buat kode Anda di bawah ini.
-# evenNumber = [i for i in range(0,501) if i % 2 == 0]
-# print(evenNumber)
+evenNumber = [i for i in range(0,501) if i % 2 == 0]
+print(evenNumber)
 
