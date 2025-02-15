@@ -1,0 +1,445 @@
+Fungsi
+Sebelum mulai mempelajari fungsi dalam Python, mari kita bahas terlebih dahulu tentang konsep dasar fungsi.
+
+
+
+Fungsi dalam Matematika
+Fungsi dalam pemrograman sebenarnya didasari oleh konsep pemetaan (asosiasi) dan fungsi dalam matematika. Fungsi pada matematika merupakan pemetaan antara dua himpunan nilai, yaitu domain dan range. Kita bisa bayangkan fungsi sebagai sebuah mesin yang memiliki input (domain) dan output (range). Output tersebut pasti terkait dengan input bagaimana pun kondisinya.
+
+dos:ed3b8eba1ecf3ee286c7cb9396c012e620230821195745.jpeg
+
+Notasi atau bentuk rumus fungsi dalam matematika beragam. Salah satu yang umum dijumpai adalah notasi berikut.
+
+dos:273ed8af66ad0b01cb35f7fa34072d8620230821195744.jpeg
+
+Dengan catatan sebagai berikut.
+
+f = nama fungsi
+x = input
+2x = apa yang harus dikeluarkan (output)
+Mari kita lihat salah satu soal fungsi sederhana dalam matematika. Asumsikan bahwa kita memiliki sebuah fungsi untuk mengalikan bilangan bulat dengan nilai 2. Jadi, berikut perhitungannya.
+
+dos:8356f943b63b412366f713e97830502b20230821195744.jpeg
+
+Perhatikan pada gambar tersebut. Sebab fungsi kita bertujuan untuk mengalikan bilangan bulat dengan nilai 2, setiap elemen yang berada pada himpunan domain akan dikalikan dua dan hasilnya ditampung pada himpunan range. 
+
+Notasi f(x)=2x menunjukkan bahwa fungsi "f" mengambil "x" dan mengalikannya dengan 2.
+
+dos:8a7374f2deb2a7a746ee73b318067f9220230821195746.jpeg
+
+Sampai sini, kita sudah memahami secara mendasar mengenai fungsi dalam matematika. Ingat bahwa fungsi "f(x)=2x" yang kita deklarasikan akan mengalikan bilangan bulat dengan 2, berapa pun bilangannya. Mari kita lanjutkan mengenai fungsi dalam pemrograman.
+
+
+
+Fungsi dalam Pemrograman
+Fungsi dalam pemrograman didasari oleh fungsi dalam matematika. Jadi, baik fungsi pemrograman maupun fungsi matematika memiliki tujuan yang sama, yaitu mengubah suatu bentuk menjadi bentuk lain dengan aturan yang sama. 
+
+Mari analogikan kembali dengan konsep lain, kita bisa umpamakan fungsi dalam pemrograman seperti merakit isi black box.
+
+dos:12421cb61d85ec03e27924ec87e9a20e20230821195743.jpeg
+
+Selayaknya black box, kita tidak perlu tahu tentang hal yang terjadi dalam kotak (fungsi) tersebut. Kita hanya perlu fokus pada keadaan awal yang merupakan himpunan nilai yang terdefinisi sebagai input (domain) dan keadaan akhir yang merupakan himpunan nilai yang terdefinisi sebagai output (range).
+
+Mari ambil contoh salah satu fungsi yang sedari materi awal sudah kita kenal, yakni fungsi "print()". Fungsi ini bertujuan untuk menampilkan teks ke layar tanpa kita perlu ketahui hal yang terjadi di dalamnya. Hal yang perlu kita lakukan adalah memasukkan teks yang diinginkan ke fungsi "print()".
+
+dos:64f2b1f070d203b47148a9a0fc6db02720230821195744.jpeg
+
+Contohnya pada gambar di atas, kita hanya perlu memasukkan teks "Hello World!" tanpa tahu proses fungsi di dalamnya. Fungsi tersebut akan menghasilkan output dengan memunculkan teks "Hello World!" ke layar. 
+
+Jadi, kalau kita definisikan, fungsi dalam pemrograman adalah blok kode yang dapat digunakan kembali untuk mengeksekusi fungsionalitas tertentu saat dipanggil. Dalam Python, fungsi terbagi menjadi dua jenis.
+
+Built-in Functions
+Built-in functions atau dalam bahasa Indonesia berarti fungsi bawaan adalah kumpulan fungsi yang sudah terintegrasi dengan bahasa pemrograman Python sehingga tidak perlu mengimpor modul atau library tambahan. Fungsi bawaan ini menyediakan fungsi-fungsi inti dan dasar dari bahasa Python. Contoh dari fungsi bawaan adalah print(), len(), type(), range(), dan sebagainya.
+User-defined Functions
+User-defined functions atau dalam bahasa Indonesia berarti fungsi yang didefinisikan pengguna adalah jenis fungsi yang kita definisikan sendiri untuk melakukan tugas spesifik tertentu. Contoh dari user-defined functions adalah fungsi yang telah kita buat di awal materi ini tentang mencari luas persegi panjang.
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+4
+​
+5
+persegi_panjang_pertama = mencari_luas_persegi_panjang(5,10)
+6
+print(persegi_panjang_pertama)
+7
+​
+8
+persegi_panjang_kedua = mencari_luas_persegi_panjang(4,15)
+9
+print(persegi_panjang_kedua)
+10
+​
+11
+"""
+12
+Output:
+13
+50
+14
+60
+15
+"""
+ Input  Reset
+ Jalankan
+
+            
+Kita akan bahas lebih detail tentang fungsi ini nanti. Saat ini Anda cukup mengetahui bahwa kode di atas berperan layaknya black box. Kita perlu memasukkan angka yang merupakan panjang dan lebar persegi untuk dimasukkan ke fungsi dan akhirnya menerima output nilai luas persegi.
+
+Jika ingin menggunakan fungsi lain di luar dari built-in functions, Anda bisa mengimpor sebuah library. Library adalah koleksi dari banyaknya modul yang saling terkait dan dapat digunakan berulang kali. Modul adalah file berisi kode Python berupa fungsi, kelas, dan sebagainya. 
+
+Library dalam Python terdiri dari dua jenis.
+
+Python Standard Library
+Python Standard Library adalah jenis library yang telah terpasang secara otomatis ketika Anda melakukan instalasi Python. Python Standard Library berisi kumpulan modul dan paket yang disertakan secara default oleh Python. Paket (package) merupakan sebuah direktori berisi satu atau lebih modul yang terkait dan saling berhubungan.
+
+Anda tidak perlu melakukan instalasi untuk menggunakan Python Standard Library. Contoh Python Standard Library adalah "os", "datetime", "re", dan sebagainya. Anda bisa melihat banyaknya jenis library ini pada laman website berikut.
+External Library
+Jika sebelumnya impor library tidak perlu dilakukan untuk Python Standard, berbeda halnya dengan external library yang mengharuskan Anda mengimpor library untuk bisa menggunakannya. External Library adalah jenis library yang dikembangkan oleh individu atau organisasi di luar tim inti pengembang Python.
+
+Sederhananya, di luar sana banyak developer yang turut membuat kode untuk diri mereka sendiri dan pada akhirnya disebarluaskan untuk digunakan oleh developer lainnya. Contoh dari external library adalah TensorFlow yang merupakan library populer untuk menyelesaikan permasalahan pemelajaran mesin (machine learning). 
+Mari kita sederhanakan semua penjelasan dengan tabel berikut.
+
+Nama	Definisi	Contoh
+Fungsi
+
+Blok kode yang dapat digunakan kembali untuk mengeksekusi fungsionalitas tertentu saat dipanggil.
+
+print(), len(), mencari_luas_persegi_panjang()
+
+Built-in functions
+
+Kumpulan fungsi yang sudah terintegrasi dengan bahasa pemrograman Python sehingga tidak perlu mengimpor modul atau library tambahan.
+
+print(), len(), range()
+
+User-defined functions
+
+Jenis fungsi yang kita definisikan sendiri untuk melakukan tugas spesifik tertentu.
+
+mencari_luas_persegi_panjang()
+
+Modul
+
+File berisi kode Python berupa fungsi, kelas, dan sebagainya.
+
+Math, dan semua file yang kita buat sendiri dengan ekstensi ".py" (main.py, var.py, dan lain sebagainya)
+
+Package
+
+Sebuah direktori berisi satu atau lebih modul yang terkait dan saling berhubungan.
+
+NumPy, Pandas
+
+Library
+
+Koleksi dari banyaknya modul dan paket yang saling terkait dan dapat digunakan berulang kali.
+
+Matplotlib, TensorFlow, Beautiful Soup
+
+Kerap kali kita salah mengartikan library, package, dan modul. Ketiga hal tersebut sebenarnya saling berkaitan. Misalnya, terkadang ketika menyebut NumPy sebagai library, sebenarnya itu sah-sah saja karena library berisi package dan juga modul.
+
+
+
+Kegunaan Fungsi 
+Mengapa kita harus menggunakan fungsi dalam pemrograman? Sebenarnya terdapat banyak sekali kegunaan fungsi yang dapat menyelesaikan masalah pada pemrograman. Beberapa kegunaannya sebagai berikut.
+
+Program dapat dipecah menjadi bagian yang lebih kecil (sub).
+dos:ebf73bd121f15f7f3f3803e654b6255820230821200321.pngKetika membuat kode program yang kompleks, Anda bisa membagi setiap programnya menjadi bagian-bagian kecil dengan mendefinisikan fungsi, dan di dalamnya setiap fungsi dapat dipanggil sebagai satu baris atau ekspresi dalam program utama.
+Penggunaan ulang kode alih-alih menulis ulang kode.
+dos:51043f9d20256a385161aedf9744eaeb20230821200342.pngKetika Anda merasa perlu membuat kode yang berulang-ulang, pemrograman akan menjadi lebih efisien jika kode tersebut diorganisasikan sebagai sebuah fungsi. Contohnya fungsi untuk mencari luas persegi panjang akan sangat berguna dalam berbagai jenis persoalan dengan nilai panjang dan lebar yang berbeda.
+Setiap fungsi bersifat independen dan dapat diuji secara terpisah.
+dos:0ff839b28a4fb293f8ea4f61149e734820230821200403.pngSetiap fungsi bersifat independen, artinya Anda dapat menguji setiap fungsi tersebut dalam interpreter (mode interaktif Python) tanpa perlu membuat program utuh terlebih dahulu. Ketika bekerja dalam program yang lebih kompleks dan melibatkan banyak programmer, hal ini juga mempermudah pembagian tugas masing-masing.
+
+
+Mendefinisikan Fungsi dalam Python
+Baiklah, Anda sudah memahami secara mendasar tentang fungsi dan kegunaannya. Mari kita mulai membuat fungsi sendiri (user-defined functions). 
+
+Secara umum, fungsi terdiri dari header, body, dan return, seperti gambar berikut.
+
+dos:8206efc98054c60d1c91e638d1f9ff9a20230821195745.jpeg
+
+Dengan catatan sebagai berikut.
+
+Function header memberi tahu Python bahwa kita mulai mendefinisikan suatu fungsi.
+Function body adalah blok kode yang diindentasi setelah header fungsi menentukan hal yang dilakukan fungsi tersebut. Kita menentukan semua kode yang akan dibuat dalam function body. Ingat bahwa bagian ini adalah blok kode sehingga Anda harus memperhatikan indentasi untuk menghindari kesalahan.
+Function return adalah pernyataan yang digunakan dalam fungsi untuk mengembalikan nilai atau hasil eksekusi dari fungsi tersebut. Ketika sebuah fungsi dieksekusi, biasanya ada situasi bahwa kita ingin mendapatkan nilai atau hasil dari proses yang dilakukan oleh fungsi tersebut. Untuk itu, kita menggunakan pernyataan 'return' dalam fungsi untuk mengembalikan nilai kepada pemanggil fungsi.
+
+
+Membuat Fungsi
+Mari kita gunakan kembali fungsi yang sempat disebut di awal.
+
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+ Input  Reset
+ Jalankan
+
+            
+Ingat bahwa permasalahan yang ingin diselesaikan adalah kita tidak ingin mengulang untuk menulis rumus luas persegi panjang. Jadi, kita menggunakan fungsi untuk membungkus rumus tersebut. Perhatikan gambar di bawah ini untuk lebih menjelaskan setiap elemen fungsi.
+
+dos:4da1b6deac6e0d0cb5d554f67432f21220230821195745.jpeg
+
+Fungsi yang kita buat sebelumnya terdiri dari beberapa elemen, yakni berikut.
+
+def digunakan sebagai pernyataan bahwa kita membuat fungsi.
+"mencari_luas_persegi_panjang" merupakan nama fungsi yang kita tentukan. 
+Setiap fungsi memiliki parameter bertujuan untuk menyimpan nilai yang akan digunakan oleh fungsi dalam proses eksekusinya. Dalam contoh mencari luas persegi panjang, parameter "panjang, lebar" akan menyimpan setiap input yang masuk, seperti jika Anda memasukkan panjang 5cm dan lebar 10cm.
+Setiap definisi fungsi harus diakhiri dengan colon atau titik dua ":" untuk menandakan awal blok kode fungsi.
+Setelah function header selesai, selanjutnya kita definisikan function body yang berisi kode untuk dieksekusi. Dalam contoh mencari luas persegi panjang, kita memasukkan rumus luas persegi di bagian ini. Hasil dari rumus tersebut disimpan dalam variabel "luas_persegi_panjang". 
+Terakhir, kita menggunakan return keyword yang merupakan bagian dari return statement. Return statement bertujuan untuk mengembalikan nilai atau hasil eksekusi fungsi tersebut. Dalam contoh di atas, kita mengembalikan variabel "luas_persegi_panjang" sebagai hasil dari proses eksekusi fungsi.
+
+
+Memanggil Fungsi
+Sekarang, bagaimana cara memanggil fungsi tersebut? Pada dasarnya, kita bisa memanggil fungsi dengan cara menuliskan nama fungsi seperti kita menggunakan "print()", "len()", dan sebagainya.
+
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+4
+​
+5
+mencari_luas_persegi_panjang(10,5)   # Ini adalah pemanggil fungsi
+ Input  Reset
+ Jalankan
+
+            
+Namun, layar tidak menampilkan hasil eksekusi dari fungsi karena kita tidak menampilkannya ke layar atau menggunakan "print()". Maka dari itu, umumnya programmer akan menggunakan variabel untuk menyimpan hasil dari eksekusi fungsi.
+
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+4
+​
+5
+persegi_panjang_pertama = mencari_luas_persegi_panjang(5,10)
+6
+print(persegi_panjang_pertama)
+7
+​
+8
+"""
+9
+Output:
+10
+50
+11
+"""
+ Input  Reset
+ Jalankan
+
+            
+Dari kode di atas, secara sekuensial program akan berjalan seperti berikut.
+
+Pertama, kita menggunakan fungsi bernama "mencari_luas_persegi_panjang()" yang memiliki dua parameter, yaitu panjang dan lebar. Fungsi ini menghitung luas persegi panjang dengan mengalikan nilai panjang dan lebar serta mengembalikan hasilnya.
+Ketika memanggil fungsi "mencari_luas_persegi_panjang(5, 10)", kita menyimpan hasilnya dalam variabel bernama "persegi_panjang_pertama". Dalam pemanggilan ini, angka 5 dianggap sebagai nilai panjang dan angka 10 dianggap sebagai nilai lebar.
+Kemudian, dalam fungsi, nilai panjang dan lebar digunakan untuk menjalankan kode "panjang * lebar". Hasil dari operasi ini disimpan dalam variabel "luas_persegi_panjang".
+Selanjutnya, kita mengembalikan nilai luas_persegi_panjang kepada pemanggil fungsi dengan menggunakan pernyataan "return".
+Sekarang, nilai yang dikembalikan oleh fungsi tersebut disimpan dalam variabel "persegi_panjang_pertama" sehingga kita dapat mencetaknya ke layar menggunakan fungsi "print(persegi_panjang_pertama)".
+Ke depannya, kita bisa menggunakan variabel tersebut berulang-ulang. Secara struktur, pemanggil fungsi terdiri beberapa elemen, yakni berikut.
+
+dos:7a967ccf3f3526c2cb6bfa40cfeb348320230821195745.jpeg
+
+Ketika Anda memanggil sebuah fungsi, ada dua elemen sebagai berikut.
+
+Nama fungsi; tentu Anda harus menyebutkan nama fungsi yang ingin digunakan. Namun ingat, gunakan kurung tutup "()" untuk memanggilnya.
+Argumen bisa dikatakan sebagai nilai yang diberikan kepada fungsi. Nantinya, nilai tersebut akan disimpan dalam parameter fungsi. Pada contoh fungsi di atas, argumen 5 dan 10 merepresentasikan parameter panjang dan lebar dalam fungsi "mencari_luas_persegi_panjang()" yang kita buat sebelumnya.
+
+
+Docstring
+Terakhir, untuk membuat fungsi lebih mudah dipahami oleh programmer lain, kita bisa membuat dokumentasi berupa docstring. Docstring adalah akronim dari documentation string, bertujuan untuk membuat dokumentasi terhadap fungsi yang dibuat. Umumnya, dokumentasi yang dijelaskan berupa argumen, return, deskripsi fungsi, dan sebagainya.
+
+Mari lihat contoh penerapannya di bawah ini.
+
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    """
+3
+    Fungsi ini digunakan untuk menghitung luas persegi panjang.
+4
+​
+5
+    Args:
+6
+        panjang (int): Panjang persegi panjang.
+7
+        lebar (int): Lebar persegi panjang.
+8
+​
+9
+    Returns:
+10
+        int: Luas persegi panjang hasil perhitungan.
+11
+    """
+12
+​
+13
+    luas_persegi_panjang = panjang*lebar
+14
+    return luas_persegi_panjang
+15
+​
+16
+persegi_panjang_pertama = mencari_luas_persegi_panjang(5,10)
+17
+print(persegi_panjang_pertama)
+18
+​
+19
+"""
+20
+Output:
+21
+50
+22
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada kode di atas, kita mendefinisikan docstring dengan memberikan blok komentar dengan tiga double quote (""") tepat di bawah "def" keyword. Hal ini untuk menegaskan sebelum kode dibaca, kita harus memahami dokumentasi di bawahnya terlebih dahulu.
+
+Dokumentasi di atas memiliki tiga elemen, yakni berikut.
+
+Deskripsi: Teks yang menjelaskan tujuan dari fungsi yang dibuat. Pada contoh di atas, kita mendefinisikan teks "Fungsi ini digunakan untuk menghitung luas persegi panjang" yang artinya fungsi ini ditujukan untuk menghitung luas persegi panjang. 
+Argumen: bagian yang menjelaskan argumen yang diterima oleh fungsi. Dalam contoh di atas, argumen yang diterima adalah panjang dan lebar dengan keduanya termasuk bilangan bulat atau bertipe data integer. 
+Return: Bagian ini menjelaskan nilai yang akan dikembalikan oleh fungsi. Dalam contoh di atas, fungsi akan mengembalikan nilai luas persegi panjang hasil perhitungan yang termasuk bilangan bulat atau bertipe data integer.
+
+
+Argumen dan Parameter
+Ingat bahwa argumen dan parameter adalah hal yang berbeda, sering kali programmer tertukar akan kedua istilah tersebut. Sederhananya, Anda bisa bayangkan parameter seperti black box yang akan menampung nilai dan nilai tersebut adalah argumen.
+
+Contohnya, saat Anda membuat fungsi berikut.
+
+dos:d67ea68f34c8e3646d66d7fc3bb307c020230821195745.jpeg
+
+Ketika Anda membuat fungsi di atas, a, b, c merupakan parameter. Namun pada saat Anda memanggilnya, nilai 1, b=50,  c='Dicoding' menjadi argumen.
+
+dos:a814a1590f0b64afe2c12abe17ee6c0520230821195745.jpeg
+
+Keterkaitan antara argumen dan parameter dapat dilihat pada gambar bergerak (GIF) berikut.
+
+dos:f4c3b81d37b3a5fcd4efe3f5c9116a2e20230821201037.gif
+
+Argumen
+Argumen adalah nilai yang akan diberikan kepada fungsi. Setidaknya ada dua jenis argumen yang dikenal dalam Python.
+
+Keyword Argument
+Keyword Argument adalah jenis argumen yang disertai dengan nama parameter (identifier) dan secara eksplisit disebutkan. Ketika nama parameter dalam sebuah argumen secara langsung disebutkan, artinya kita menggunakan keyword argument.
+main.py
+(panjang=5, lebar=10
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+4
+​
+5
+persegi_panjang_pertama = mencari_luas_persegi_panjang(panjang=5, lebar=10)
+6
+​
+7
+print(persegi_panjang_pertama)
+8
+​
+9
+"""
+10
+Output:
+11
+50
+12
+"""
+ Input  Reset
+ Jalankan
+
+            
+Ketika kita memanggil fungsi "mencari_luas_persegi_panjang" dengan menuliskan nama parameter diikuti tanda sama dengan (=) dan nilai yang ingin diberikan, itu disebut keyword argument.
+
+Pada contoh di atas, keyword argument "panjang=5" dan "lebar=10" diberikan saat pemanggilan fungsi.
+
+Kelebihan dari jenis argumen ini adalah walaupun kita harus menuliskan lebih banyak kata, urutan parameter fungsi tidak perlu dipikirkan.
+
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+4
+​
+5
+persegi_panjang_pertama = mencari_luas_persegi_panjang(lebar=10, panjang=5)
+6
+​
+7
+print(persegi_panjang_pertama)
+8
+​
+9
+"""
+10
+Output:
+11
+50
+12
+"""
+ Input  Reset
+ Jalankan
+
+            
+Contohnya pada kode di atas, kita menuliskan "lebar=10" terlebih dahulu dan diikuti oleh "panjang=5". Padahal, dalam fungsi yang kita buat urutan parameternya adalah panjang dan lebar.
+
+Positional Argument
+Kebalikan dari keyword adalah positional, artinya Anda tidak menyebutkan nama parameter (identifier) secara eksplisit. Ketika memanggil fungsi, Anda hanya harus memasukkan nilai yang ingin diberikan. Namun, Anda harus mengikuti urutan dari parameter fungsi tersebut.
+main.py
+1
+def mencari_luas_persegi_panjang(panjang,lebar):
+2
+    luas_persegi_panjang = panjang*lebar
+3
+    return luas_persegi_panjang
+4
+​
+5
+persegi_panjang_pertama = mencari_luas_persegi_panjang(5,10)
+6
+​
+7
+print(persegi_panjang_pertama)
+8
+​
+9
+"""
+10
+Output:
+11
+50
+12
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita memanggil fungsi "mencari_luas_persegi_panjang" dengan argumen 5 dan 10. Masing-masing nilai tersebut merepresentasikan parameter panjang dan lebar. Jika kita menukar urutan nilai tersebut yang awalnya "5, 10" menjadi "10, 5", program akan menganggap panjangnya 10 dan lebarnya 5.
