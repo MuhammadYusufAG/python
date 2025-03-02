@@ -1,0 +1,224 @@
+Rangkuman Object-Oriented Programming (OOP)
+Kita sudah berada di penghujung materi Object-Oriented Programming (OOP). Sampai sejauh ini, Anda diharapkan paham untuk mengimplementasikan konsep OOP ke dalam setiap program yang Anda bangun. Mari kita rangkum secara saksama.
+
+
+
+Duck Typing
+Duck typing merupakan konsep yang menjelaskan bahwa sebuah tipe atau class dari sebuah object tidak lebih penting daripada method yang menjadi perilakunya. Konsep ini berbunyi "if it walks like a duck and it quacks like a duck, then it must be a duck" yang artinya jika sesuatu berjalan seperti bebek dan bersuara seperti bebek, kemungkinan besar ia adalah bebek. 
+
+Python ingin memberikan keleluasaan terhadap para developernya untuk tidak perlu mencemaskan tipe atau kelas (class) dari sebuah objek (object), yang lebih penting adalah kemampuan melakukan operasinya (method). 
+
+
+
+Class, Object, dan Method
+Object-oriented programming adalah paradigma pemrograman berorientasi pada pengorganisasian kode menjadi objek-objek yang memiliki atribut dan perilaku (method). Objek adalah turunan dari class dan kelas merupakan cetakan yang memungkinkan kita dapat membuat banyak objek berdasarkan cetakan tersebut. 
+
+Method adalah perilaku atau tindakan yang dapat dilakukan oleh objek atau kelas. Sebagaimana halnya maju, mundur, berbelok, dan berhenti pada contoh sebelumnya. Atribut adalah variabel yang menjadi identitas dari objek atau kelas, seperti warna dan kecepatan pada contoh sebelumnya.
+
+Mari sederhanakan dengan tabel berikut.
+
+Nama	Deskripsi	Contoh
+Class (Kelas)
+
+Cetakan (blueprint) untuk membuat objek-objek dengan karakteristik dan perilaku yang serupa.
+
+Mobil; Manusia.
+
+Object (Objek)
+
+Turunan atau perwujudan dari kelas.
+
+Mobil Dicoding; Budi, Herman, Asep.
+
+Perilaku (Method)
+
+Perilaku atau tindakan yang dapat dilakukan oleh objek atau kelas.
+
+Maju, mundur, berbelok, berhenti.
+
+Atribut
+
+Variabel yang menjadi identitas dari objek atau kelas.
+
+Warna, kecepatan, merek.
+
+
+
+Class
+Pembuatan class dalam Python mirip seperti fungsi, yakni perlu menggunakan keyword untuk bisa membuatnya. Keyword atau kata kunci untuk membuat kelas dalam Python adalah "class".
+
+class Mobil:
+    pass
+
+
+Object (Objek)
+Untuk memanggil kelas yang telah dibuat, kita membuat sebuah objek. Berdasarkan KBBI dari kemendikbud, objek merupakan benda, hal, dan sebagainya yang dijadikan sasaran untuk diteliti, diperhatikan, dan sebagainya. Keterkaitan antara objek dan class sangat erat. Contohnya, jika Anda membuat kelas bernama manusia, objeknya adalah manusia dengan nama yang berbeda.
+
+Anda bisa umpamakan kelas adalah bentuk abstrak dari objek layaknya cetakan atau blueprint. Saat kelas diwujudkan menjadi bentuk yang lebih nyata, proses ini disebut sebagai instansiasi. Itulah sebabnya objek disebut juga sebagai instance atau instance of the class.
+
+class Mobil:
+    # Atribut
+    warna = "Merah"
+ 
+mobil_1 = Mobil()
+
+
+Atribut
+Dalam Python, ada dua jenis atribut kelas yang dapat dibagi, yaitu atribut kelas dan atribut objek atau instance. Atribut kelas adalah jenis atribut yang secara otomatis terdefinisi dan menjadi bawaan kelas ketika instance dibuat berdasarkan kelas tersebut. Anda dapat menganggapnya sebagai nilai default atau bawaan dari kelas. Jika Anda membuat beberapa objek berdasarkan kelas yang memiliki jenis atribut ini, setiap objek akan memiliki atribut yang sama dengan nilai yang sama. 
+
+Namun, perlu diperhatikan bahwa jenis atribut kelas memiliki kelemahan, yaitu ketika nilai atribut kelas diubah, perubahan tersebut akan memengaruhi semua objek yang dibuat berdasarkan kelas tersebut.
+
+Atribut Kelas
+Atribut kelas adalah jenis atribut yang melekat pada kelas sehingga menjadi bawaan ketika membuat sebuah instance.
+class Mobil:
+    # Atribut kelas
+    warna = "Merah"
+ 
+mobil1 = Mobil()
+print(mobil1.warna)
+Atribut Instance
+Atribut instance atau atribut objek adalah atribut yang terkait dengan instance atau objek itu sendiri, bukan kelas.
+class Mobil:
+    # Atribut Instance
+    def __init__(self):
+        self.warna = 'Merah'
+ 
+mobil_1 = Mobil()
+print(mobil_1.warna)
+Untuk membuat atribut instance, kita perlu membuat atribut tersebut melalui class constructor.
+
+
+
+Class Constructor
+Pembangun kelas atau class constructor adalah sebuah fungsi khusus dalam Python yang digunakan untuk menentukan nilai atau kondisi awal dari suatu kelas. Dengan fungsi ini, saat kita melakukan proses instansiasi atau pembuatan objek baru, hal pertama yang dilakukan adalah memanggilnya terlebih dahulu.
+
+Tidak hanya untuk membuat atribut, kita dapat menambahkan parameter lain dalam class constructor. 
+
+class Mobil:
+    def __init__(self, warna, merek, kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+        
+mobil_1 = Mobil('Merah', 'DicodingCar', 160)
+ 
+print(mobil_1.warna)
+print(mobil_1.merek)
+print(mobil_1.kecepatan)
+ 
+"""
+Output:
+Merah
+DicodingCar
+160
+"""
+
+
+Method
+Method merupakan perilaku atau tindakan yang dapat dilakukan oleh objek atau kelas. Dalam pembuatan metode, sebenarnya kita membuat fungsi di dalam kelas itu sendiri. Dengan kata lain, kita menggunakan kata kunci "def" atau membuat fungsi sebagai suatu metode. Method sendiri dibagi menjadi tiga jenis.
+
+Metode dari Object (Object Method)
+Jenis pertama adalah method yang melekat terhadap objek. Ciri dari jenis metode ini adalah adanya parameter self yang merujuk pada objek saat ini yang dibuat.
+class Mobil:
+    def __init__(self, warna, merek, kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+ 
+    def tambah_kecepatan(self):
+        self.kecepatan += 10
+Metode secara Statis(Static Method)
+Static method adalah fungsi atau method pada sebuah kelas yang bersifat statis. Artinya metode atau fungsi ini bersifat independen dan tidak terikat pada instance kelas. Metode ini dapat dianggap seperti kita membuat fungsi seperti biasa, tetapi didefinisikan dalam kelas. Jadi, ini menjadi perilaku untuk kelas tersebut. Untuk membuat static method, Anda bisa menambahkan dekorator @staticmethod tepat sebelum mendefinisikan fungsi atau metode.
+class Mobil:
+    def __init__(self, merek):
+        self.merek = merek
+    
+    @staticmethod
+    def intro_mobil():
+        print("Ini adalah metode dari kelas Mobil")
+        
+Mobil.intro_mobil()
+mobil_1 = Mobil("DicodingCar")
+mobil_1.intro_mobil()
+Metode dari Class(Class Method)
+Metode terakhir adalah class method yang termasuk jenis metode cukup spesial dalam Python. Jika object method identik dengan parameter self yang merujuk pada objek, class methodjuga memerlukan sebuah parameter yang merujuk pada kelas.
+class Mobil:
+    def __init__(self, merek):
+        self.merek = merek
+ 
+    @classmethod
+    def intro_mobil(cls):
+        print("Ini adalah metode dari kelas Mobil")
+        
+Mobil.intro_mobil()
+mobil_1 = Mobil("DicodingCar")
+mobil_1.intro_mobil()
+
+
+Inheritance
+Berikut adalah rangkuman materi terkait inheritance atau dalam bahasa Indonesia disebut pewarisan.
+
+
+
+Mekanisme Pewarisan
+dos:474361acb56f38d3f5de58bdadf63efd20230822112439.jpeg
+
+Untuk melakukan pewarisan, anggap kita memiliki "kelas A" sebagai induk atau kelas dasar. Dari kelas A tersebut, kita membuat kelas baru bernama "kelas B" sebagai kelas turunan dari kelas yang didapatkan (kelas A). Ketika kelas B mewarisi kelas A, secara otomatis kelas ini memiliki fitur-fitur yang dimiliki oleh kelas A tersebut, dalam hal ini atribut-atribut dan metode-metode.
+
+Jika kelas B memiliki nama metode yang sama dengan kelas A, metode tersebut akan menimpa metode yang diwariskan oleh kelas A.
+
+class Mobil:
+    def __init__(self, warna, merek, kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+    
+    def tambah_kecepatan(self):
+        self.kecepatan += 10
+ 
+ 
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+
+
+Override
+Ketika kita membuat metode baru di kelas turunan (kelas baru) dengan nama yang sama seperti metode di kelas induk, itu akan menyebabkan metode baru menimpa (override) metode pada kelas induk. 
+
+class Mobil:
+    def __init__(self, warna, merek, kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+    
+    def tambah_kecepatan(self):     # tambah_kecepatan
+        self.kecepatan += 10
+ 
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+    
+    def tambah_kecepatan(self):     # tambah_kecepatan
+        self.kecepatan += 20
+
+
+Super
+Terakhir adalah super, yakni fungsi yang digunakan untuk menggunakan metode atau atribut dari kelas induk, tetapi tidak ingin menuliskan ulang semua kode. Nama super sebenarnya merujuk pada kelas induk yang disebut juga sebagai super class. Kita bisa memanfaatkan konsep ini untuk menghindari kode berulang dan memanfaatkan fungsi yang sudah ada pada kelas induk (super class).
+
+class Mobil:
+    def __init__(self, warna, merek, kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+    
+    def tambah_kecepatan(self):
+        self.kecepatan += 10
+ 
+ 
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+    
+    def tambah_kecepatan(self):
+        super().tambah_kecepatan()     # Super
+        print("Kecepatan Anda meningkat! Hati-Hati!")

@@ -1,0 +1,305 @@
+Inheritance (Pewarisan)
+Sebagaimana ilustrasi awal, kita dapat membuat sebuah kelas baru dengan menggunakan kelas induk yang sudah ada. Konsep ini disebut dengan 'inheritance' atau dalam bahasa Indonesia artinya pewarisan.
+
+
+
+Mekanisme Pewarisan
+dos:d33e86529030af3a78283af384ce923a20230822111858.jpeg
+
+Untuk melakukan pewarisan, anggap kita memiliki "kelas A" sebagai induk atau kelas dasar. Dari kelas A tersebut kita membuat kelas baru bernama "kelas B" sebagai kelas turunan dari kelas yang didapatkan (kelas A). Ketika kelas B mewarisi kelas A, secara otomatis kelas ini memiliki fitur-fitur yang dimiliki oleh kelas A tersebut, dalam hal ini atribut-atribut dan metode-metode. 
+
+Sebagaimana halnya pada ilustrasi di sampingnya, Anda mempunyai kelas Mobil sebagai kelas dasar atau induk. Lalu, kita membuat kelas Sport sebagai turunan dari kelas mobil yang sudah ada. Selanjutnya, kita bisa memiliki perilaku dan atribut yang sama dengan kelas sebelumnya. Bahkan kita bisa menambahkan hal baru, seperti perilaku turbo pada kelas mobil sport.
+
+Hal yang perlu diperhatikan, jika kelas B memiliki nama metode yang sama dengan kelas A, metode tersebut akan menimpa metode yang diwariskan oleh kelas A. 
+
+Mari lihat contoh pewarisan di bawah ini, asumsikan bahwa kita perlu membuat kelas Mobil sebagai kelas dasar. Dari kelas Mobil ini, kita akan membuat kelas Mobil baru bernama Mobil Sport dengan fitur yang sama seperti kelas dasarnya. Namun, ada tambahan fitur baru pada kelas tersebut, yakni turbo untuk meningkatkan kecepatan mobil hingga 50 km/jam.
+
+Mari mulai dengan kelas dasar Mobil.
+
+main.py
+mobil_1 = Mobil("Merah", "DicodingCar", 160)
+print(mobil_1.kecepatan)
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+    
+7
+    def tambah_kecepatan(self):
+8
+        self.kecepatan += 10
+9
+​
+10
+mobil_1 = Mobil("Merah", "DicodingCar", 160)
+11
+print(mobil_1.kecepatan)
+12
+​
+13
+"""
+14
+Output:
+15
+160
+16
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat sebuah kelas bernama Mobil dengan atributnya adalah warna, merek, dan kecepatan. Kelas ini juga memiliki metode, yaitu tambah_kecepatan untuk meningkatkan kecepatan mobil sebesar 10. Anggap bahwa kode ini tidak boleh diubah sama sekali.
+
+Kita akan membuat sebuah kelas baru bernama "MobilSport" yang mewarisi atribut dan metode kelas Mobil dasar. Lalu, kita menambahkan metode baru, yaitu turbo untuk meningkatkan kecepatan sebesar 50.
+
+
+
+main.py
+mobil_sport_1 = MobilSport("Hitam", "DicodingSportCar", 160)
+print(mobil_sport_1.kecepatan)
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+    
+7
+    def tambah_kecepatan(self):
+8
+        self.kecepatan += 10
+9
+​
+10
+​
+11
+class MobilSport(Mobil):
+12
+    def turbo(self):
+13
+        self.kecepatan += 50
+14
+​
+15
+# Kelas Mobil Dasar
+16
+mobil_1 = Mobil("Merah", "DicodingCar", 160)
+17
+print(mobil_1.kecepatan)
+18
+​
+19
+# Kelas Mobil Sport
+20
+mobil_sport_1 = MobilSport("Hitam", "DicodingSportCar", 160)
+21
+print(mobil_sport_1.kecepatan)
+22
+mobil_sport_1.turbo()
+23
+print(mobil_sport_1.kecepatan)
+24
+​
+25
+"""
+26
+Output:
+27
+160
+28
+160
+29
+210
+30
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat kelas baru bernama MobilSport yang mewarisi kelas sebelumnya, yaitu kelas Mobil. Mari fokus terlebih dahulu pada bagian kode berikut.
+
+class MobilSport(Mobil):
+    def turbo(self):
+        self.kecepatan += 50
+Pada bagian kode tersebut, kita mendefinisikan kelas MobilSport dengan menambahkan parameter tambahan, yaitu kelas Mobil. Dengan demikian, kelas MobilSport akan mewarisi seluruh fitur dari kelas Mobil, seperti atribut warna, merek, kecepatan, dan sebagainya. 
+
+Dalam kelas MobilSport, kita membuat object method baru, yaitu turbo untuk meningkatkan kecepatan mobil. Perhatikan bahwa dalam kelas tersebut, kita tidak perlu mendefinisikan kembali atribut sehingga parameter self akan merujuk pada atribut bawaan, yakni kelas Mobil.
+
+Selanjutnya, pada bagian kode berikut.
+
+# Kelas Mobil Sport
+mobil_sport_1 = MobilSport("Hitam", "DicodingSportCar", 160)
+print(mobil_sport_1.kecepatan)
+mobil_sport_1.turbo()
+print(mobil_sport_1.kecepatan)
+Pada contoh di atas, kita memanggil kelas baru dan membuat objek bernama "mobil_sport_1". Perhatikan bahwa kita juga perlu menambahkan argumen sesuai atribut yang didefinisikan. 
+
+Perintah "print()" pertama akan mencetak kecepatan mobil_sport_1 saat ini, yaitu 160, dan itu adalah nilai bawaan dari kelas mobil dasar. Lalu, kita memanggil metode baru yang telah dibuat, yaitu "mobil_sport_1.turbo()". Hal ini menyebabkan kita memanggil atribut kecepatan yang bertambah dari 160 menjadi 210 (bertambah 50).
+
+Dengan melakukan pewarisan, Anda dengan mudah bisa menambahkan (extend) kemampuan dari suatu kelas dengan fitur yang dibuat sendiri. 
+
+
+
+Override
+Selanjutnya, seperti yang dijelaskan di awal, ketika kita membuat metode baru di kelas turunan (kelas baru) dengan nama yang sama seperti metode di kelas induk, itu akan menyebabkan metode baru menimpa (override) metode dari kelas induk.
+
+main.py
+mobil_sport_1.tambah_kecepatan()     # Memanggil metode baru tambah kecepatan()
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+    
+7
+    def tambah_kecepatan(self):     # tambah_kecepatan
+8
+        self.kecepatan += 10
+9
+​
+10
+class MobilSport(Mobil):
+11
+    def turbo(self):
+12
+        self.kecepatan += 50
+13
+    
+14
+    def tambah_kecepatan(self):     # tambah_kecepatan
+15
+        self.kecepatan += 20
+16
+​
+17
+# Kelas Mobil Sport
+18
+mobil_sport_1 = MobilSport("Hitam", "DicodingSportCar", 160)
+19
+print(mobil_sport_1.kecepatan)
+20
+mobil_sport_1.tambah_kecepatan()     # Memanggil metode baru tambah kecepatan()
+21
+print(mobil_sport_1.kecepatan)
+22
+​
+23
+"""
+24
+Output:
+25
+160
+26
+180
+27
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita menambahkan metode baru bernama tambah_kecepatan. Metode ini juga ada di kelas mobil dasar. Namun, kita melakukan perbedaan pada metode baru ini berupa penambahan kecepatan yang awalnya sebesar 10 di kelas induk, menjadi sebesar 20 di kelas baru. Hasilnya, dapat kita lihat bahwa kecepatan kini bertambah 20 setiap kita memanggil metode tambah_kecepatan().
+
+Namun, perlu dipahami bahwa menimpa bukan berarti mengubah metode dari kelas induk. Hal ini karena metode dari kelas baru tersebut merupakan hasil dari pewarisan sehingga tidak akan mengubah metode dari kelas induk. Silakan tambahkan kode berikut ke program di atas pada bagian akhir kode (sebelum komentar output).
+
+# Kelas Mobil Dasar
+mobil_1 = Mobil("Merah", "DicodingCar", 160)
+print(mobil_1.kecepatan)
+mobil_1.tambah_kecepatan()
+print(mobil_1.kecepatan)
+Anda akan melihat bahwa ketika kita membuat objek dari kelas dasar, lalu memanggil metode dari kelas dasar tersebut, program tetap menambah kecepatan sebesar 10 walaupun kita sudah melakukan overriding (menimpa) di kelas baru.
+
+Saat Anda menjalankan program, Python akan mencari nama metode dengan nama yang sesuai di kelas baru terlebih dahulu. Jika tidak ada, nama akan dicari di kelas induk.
+
+
+
+Super
+Lantas, bagaimana cara untuk kita ingin menggunakan metode atau atribut dari kelas induk, tetapi tidak ingin menuliskan ulang semua kode? Ini adalah tujuan dari adanya super dalam konsep OOP. Nama super sebenarnya merujuk pada kelas induk yang disebut juga sebagai super class. Kita bisa memanfaatkan konsep ini untuk menghindari kode berulang dan memanfaatkan fungsi yang sudah ada pada kelas induk (super class).
+
+Mari kita lihat contohnya, kita akan menggunakan program yang sama seperti pada materi overriding. Namun, alih-alih menambah kecepatan, mari kita tambahkan teks baru berupa "Kecepatan Anda meningkat! Hati-Hati!".
+
+main.py
+print("Kecepatan Anda meningkat! Hati-Hati!")
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+    
+7
+    def tambah_kecepatan(self):
+8
+        self.kecepatan += 10
+9
+​
+10
+​
+11
+class MobilSport(Mobil):
+12
+    def turbo(self):
+13
+        self.kecepatan += 50
+14
+    
+15
+    def tambah_kecepatan(self):
+16
+        super().tambah_kecepatan()
+17
+        print("Kecepatan Anda meningkat! Hati-Hati!")
+18
+​
+19
+# Kelas Mobil Sport
+20
+mobil_sport_1 = MobilSport("Hitam", "DicodingSportCar", 160)
+21
+mobil_sport_1.tambah_kecepatan()     # Memanggil metode baru tambah kecepatan()
+22
+print(mobil_sport_1.kecepatan)
+23
+​
+24
+"""
+25
+Output:
+26
+Kecepatan Anda meningkat! Hati-hati!
+27
+170
+28
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat kelas MobilSport sebagai kelas turunan dengan metode tambahan, yaitu tambah_kecepatan().
+
+    def tambah_kecepatan(self):
+        super().tambah_kecepatan()
+        print("Kecepatan Anda meningkat! Hati-Hati!")
+Pada metode ini, kita menggunakan "super()" untuk mengambil metode tambah_kecepatan yang berasal dari super class atau induknya, yaitu kelas Mobil. Dengan begitu, program akan menjalankan metode tersebut dan di bawahnya kita menambahkan teks baru sesuai kebutuhan pada kelas turunan berupa "Kecepatan Anda meningkat! Hati-hati!".

@@ -1,0 +1,717 @@
+Class, Object, dan Method
+Sebelum mengenal secara teknis class, object, dan method. Mari kita berandai-andai sejenak untuk memahami konsep object-oriented programming (OOP). 
+
+Bayangkan Anda adalah seorang penggiat mobil, suatu waktu teman Anda yang berasal dari antah-berantah datang menghampiri. Kalian pun mulai berbincang dan dimulai dengan dia yang bertanya satu hal, "Apa itu mobil?".
+
+dos:6e97620883795bc09cec63e7edb58afa20230822104950.jpeg
+
+Anda bisa menjawab, "Mobil adalah jenis kendaraan dengan empat roda yang memiliki kemampuan untuk bergerak maju, mundur, berbelok, dan berhenti. Mobil dapat melaju dengan kecepatan dari 0 hingga 160 km/jam. Mobil juga memiliki variasi warna yang beragam, termasuk merah, hitam, dan warna lainnya."
+
+dos:aa607e96f06ad021eca26737057ff53b20230822104951.jpeg
+
+Berdasarkan ilustrasi tersebut, mobil dapat dikatakan sebagai sebuah kelas (class) dan perilaku (method) mobil tersebut dapat melaju, mundur, berbelok, dan berhenti. Mobil memiliki atribut warna dan warna tersebut bisa beragam, seperti merah, hitam, dan sebagainya serta memiliki kecepatan berkisar antara 0 hingga 160 km/jam.
+
+Class dapat diibaratkan sebagai blueprint atau cetakan. Dalam contoh percakapan di atas, mobil dapat digambarkan sebagai contoh class atau blueprint. Ketika class telah dibuat, Anda dapat membuat sebuah objek baru berdasarkan class tersebut. Objek baru ini memiliki karakteristik, atribut, dan perilaku sama dengan class yang menjadi cetakannya. Anda pun dapat mengubah nilai atribut dari objek tersebut. Perhatikan gambar di bawah ini.
+
+dos:56ba7cc237efe8e9732873b59b4cb20020230822104950.jpeg
+
+Pada gambar di atas, kita memiliki sebuah kelas bernama Mobil. Kelas ini memiliki method, yaitu bergerak maju, mundur, berbelok, dan berhenti. Dari kelas ini, kita bisa membuat objek baru, misalkan membuat mobil Dicoding.
+
+Objek baru tersebut memiliki unsur method dan atribut sama dengan kelas yang menjadi cetakannya. Bahkan, kita bisa mengubahnya sesuai keinginan. Misalnya pada objek Mobil Dicoding, kita mengubah warnanya menjadi biru. Jika kita tarik ke perandaian lain, ini mirip seperti manusia di seluruh dunia. Kita memiliki teman bernama Budi, Herman, dan Asep yang walaupun nama mereka berbeda, tetapi mereka tetaplah sama-sama manusia seperti kita.
+
+Tidak hanya objek, Anda juga dapat membuat kelas baru untuk mewarisi kelas yang sudah ada.
+
+dos:80289924c5bab4c18d13fdbeaa95354220230822104951.jpeg
+
+Terlihat seperti gambar di atas, anggaplah kita memiliki mobil sebagai kelas dasar dengan method maju, mundur, berbelok, dan berhenti. Selain itu, kelas dasar mobil memiliki atribut warna dan kecepatan.
+
+Ketika membuat kelas baru, seperti Mobil Sport, kita dapat menggunakan kelas yang sudah ada (mobil sebagai kelas dasar) untuk mewarisi beberapa hal, mulai dari atribut warna, kecepatan hingga beberapa perilakunya, yakni maju, mundur, berbelok, dan berhenti. Namun, kita ingin menambahkan metode baru karena ini adalah mobil sport. Metode baru tersebut adalah turbo yang meningkatkan kecepatan secara signifikan.
+
+Secara umum, konsep OOP dalam pemrograman sangat mirip seperti ilustrasi-ilustrasi di atas. Object-oriented programming adalah paradigma pemrograman berorientasi pada pengorganisasian kode menjadi objek-objek yang memiliki atribut dan perilaku (method). Objek merupakan perwujudan dari class dengan anggapan bahwa kelas adalah cetakan yang memungkinkan kita dapat membuat banyak objek berdasarkan cetakan tersebut.
+
+Method adalah perilaku atau tindakan yang dapat dilakukan oleh objek atau kelas. Sebagaimana halnya maju, mundur, berbelok, dan berhenti pada contoh sebelumnya. Atribut adalah variabel yang menjadi identitas dari objek atau kelas, seperti warna dan kecepatan pada contoh sebelumnya.
+
+Mari sederhanakan dengan tabel berikut.
+
+Nama	Deskripsi	Contoh
+Class (Kelas)
+
+Cetakan (blueprint) untuk membuat objek-objek yang memiliki karakteristik dan perilaku serupa.
+
+Mobil; Manusia.
+
+Object (Objek)
+
+Perwujudan dari kelas.
+
+Mobil Dicoding; Budi, Herman, Asep.
+
+Perilaku (Method)
+
+Perilaku atau tindakan yang dapat dilakukan oleh objek atau kelas.
+
+Maju, mundur, berbelok, berhenti.
+
+Atribut
+
+Variabel yang menjadi identitas dari objek atau kelas.
+
+Warna, kecepatan, merek.
+
+
+
+Class
+Pembuatan class dalam Python mirip seperti fungsi, yakni perlu menggunakan keyword untuk bisa membuatnya. Keyword atau kata kunci untuk membuat kelas dalam Python adalah "class". Mari kita buat sebuah kelas bernama mobil.
+
+class Mobil:
+    pass
+Pada contoh di atas, kita membuat kelas bernama Mobil. Namun, kelas ini atribut dan method-nya belum didefinisikan sehingga kita masukkan pernyataan "pass" supaya tidak menghasilkan error. Ingat bahwa class merupakan blok kode sehingga Anda perlu memperhatikan indentasi untuk membuatnya.
+
+Selanjutnya, mari isi kelas tersebut dengan sebuah atribut. Ingat bahwa atribut adalah variabel yang menjadi identitas dari objek atau kelas.
+
+class Mobil:
+    # Atribut
+    warna = "Merah"
+Pada contoh di atas, kita memberikan variabel warna untuk menjadi atribut atau identitas bawaan dari kelas Mobil. Jika Anda jalankan kode tersebut, tidak akan ada output yang keluar. Hal ini karena kita belum memanggil kelas tersebut dan mendefinisikan kembalian nilai (return).
+
+
+
+Object (Objek)
+Untuk memanggil kelas yang telah dibuat, kita membuat sebuah objek. Berdasarkan KBBI dari kemendikbud, objek merupakan benda, hal, dan sebagainya yang dijadikan sasaran untuk diteliti, diperhatikan, dan sebagainya. Keterkaitan antara objek dan class sangat erat. Contohnya, jika Anda membuat kelas bernama manusia, objeknya adalah manusia dengan nama yang berbeda.
+
+Anda bisa umpamakan kelas adalah bentuk abstrak dari objek, layaknya cetakan atau blueprint. Saat kelas diwujudkan menjadi bentuk yang lebih nyata, proses ini disebut sebagai instansiasi. Itulah sebabnya objek disebut juga sebagai instance atau instance of the class.
+
+Pada contoh sebelumnya, kita telah membuat class. Untuk memanggilnya, kita harus mengubahnya menjadi bentuk yang lebih nyata atau bisa dikatakan objek dari kelas tersebut perlu dibuat. 
+
+class Mobil:
+    # Atribut
+    warna = "Merah"
+ 
+mobil_1 = Mobil()
+Pada contoh di atas, kita memanggil sebuah class dengan menyebutkan namanya diikuti oleh tanda kurung buka dan tutup "()", mirip seperti memanggil fungsi. Selanjutnya pada baris kode "mobil_1 = Mobil()", kita membuat sebuah objek dari kelas Mobil dan menyimpannya dalam variabel mobil_1.
+
+Tidak seperti fungsi, variabel dalam contoh di atas adalah objek yang merupakan perwujudan dari kelas yang telah kita buat. Ini berarti variabel tersebut sekarang memiliki atribut yang identik dengan kelas tersebut.
+
+main.py
+1
+class Mobil:
+2
+    # Atribut
+3
+    warna = "Merah"
+4
+​
+5
+mobil_1 = Mobil()
+6
+print(mobil_1.warna)
+7
+​
+8
+"""
+9
+Output:
+10
+Merah
+11
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita memanggil atribut objek yang berasal dari kelas Mobil, yaitu "Merah". Untuk memanggil atribut, kita dapat menyebutkan objek atau instance diikuti dengan nama atributnya. 
+
+dos:5ffe37160dd30253772892c93802dcb520230822104950.jpeg
+
+Dengan membuat objek yang merupakan instance dari kelas, kita pun dapat mengubah atribut tersebut sesuai kebutuhan. Contohnya berikut.
+
+main.py
+1
+class Mobil:
+2
+    # Atribut
+3
+    warna = 'Merah'
+4
+​
+5
+mobil_1 = Mobil()
+6
+mobil_1.warna = "Biru"
+7
+print(mobil_1.warna)
+8
+​
+9
+"""
+10
+Output:
+11
+Biru
+12
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita mengubah atribut kelas yang awalnya bernilai merah menjadi biru dengan mendeklarasikan ulang nilainya. Perhatikan kode "mobil_1.warna = 'Biru'", itu merupakan kode yang digunakan untuk mengubah nilai atribut kelas.
+
+
+
+Atribut
+Dalam Python, ada dua jenis atribut kelas yang dapat dibagi, yaitu atribut kelas dan atribut objek atau instance. Atribut kelas adalah jenis atribut yang secara otomatis terdefinisi dan menjadi bawaan kelas ketika instance dibuat berdasarkan kelas tersebut. Anda dapat menganggapnya sebagai nilai default atau bawaan dari kelas. Jika Anda membuat beberapa objek berdasarkan kelas yang memiliki jenis atribut ini, setiap objek akan memiliki atribut yang sama dengan nilai yang sama. 
+
+Namun, perlu diperhatikan bahwa jenis atribut kelas memiliki kelemahan, yaitu ketika nilai atribut kelas diubah, perubahan tersebut akan memengaruhi semua objek yang dibuat berdasarkan kelas tersebut.
+
+Perhatikan contoh berikut. Asumsikan bahwa kita membuat sebuah kelas bernama "Mobil" dengan atribut "warna". Lalu, dari kelas tersebut kita akan membuat dua objek atau instance.
+
+main.py
+1
+class Mobil:
+2
+    # Atribut kelas
+3
+    warna = "Merah"
+4
+​
+5
+mobil1 = Mobil()
+6
+print(mobil1.warna)
+7
+​
+8
+mobil2 = Mobil()
+9
+print(mobil2.warna)
+10
+​
+11
+# Mengubah atribut kelas
+12
+Mobil.warna = "Hitam"
+13
+​
+14
+print(mobil1.warna)
+15
+print(mobil2.warna)
+16
+​
+17
+"""
+18
+Output:
+19
+Merah
+20
+Merah
+21
+Hitam
+22
+Hitam
+23
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat kelas bernama "Mobil" dengan atribut "warna" diisi dengan nilai "Merah". Selanjutnya, pada kode di bawah ini kita buat dua instance baru yang diambil dari kelas mobil tersebut. Instance pertama adalah "mobil1" dan instance kedua adalah "mobil2".
+
+mobil1 = Mobil()
+print(mobil1.warna)
+ 
+mobil2 = Mobil()
+print(mobil2.warna)
+Tahap selanjutnya, pada kode di bawah ini kita ubah atribut kelas Mobil. Dengan kode tersebut, kini nilai atribut warna pada kelas mobil telah berubah. 
+
+# Mengubah atribut kelas
+Mobil.warna = "Hitam"
+Apa yang terjadi dengan objeknya? Kita cetak atribut mobil1 dan mobil2 dengan menggunakan print(). Hasilnya seperti yang Anda lihat sebelumnya bahwa kini kedua atribut pada masing-masing objek ikut mengalami perubahan yang awalnya "Merah" menjadi "Hitam".
+
+Kelemahan ini akan menjadi masalah jika kita ingin setiap objek memiliki atribut masing-masing yang menjadi ciri khasnya. Sama seperti manusia yang bisa beragam dan mempunyai ciri khas walau dalam satu "blueprint" yang sama.
+
+Jenis atribut yang kedua adalah atribut objek atau atribut instance. Jenis atribut ini memungkinkan setiap instance dari kelas memiliki atribut yang berbeda-beda sesuai dengan keinginan. 
+
+Namun, untuk membuat atribut instance kita perlu menggunakan class constructor.
+
+
+
+Class Constructor
+Pembangun kelas atau class constructor adalah sebuah fungsi khusus dalam Python yang digunakan untuk menentukan nilai awal atau kondisi awal dari suatu kelas. Dengan fungsi ini, saat kita melakukan proses instansiasi atau pembuatan objek baru, hal pertama yang dilakukan adalah memanggilnya terlebih dahulu.
+
+class Mobil:
+    def __init__(self):
+        self.warna = 'Merah'
+Pada contoh di atas, kita membuat fungsi bernama "__init__" sebagai fungsi khusus untuk menjadi constructor. Selanjutnya, kita menggunakan parameter self, yakni sebuah kata kunci untuk merujuk pada objek yang sedang diproses saat ini.
+
+Ini artinya ketika Anda membuat instance baru bernama "mobil_1", constructor akan dipanggil pertama kali dan self akan merujuk pada instance atau objek "mobil_1" tersebut. Begitu pun kalau kita membuat instance baru lainnya bernama "mobil_2", constructor akan dipanggil pertama kali dan self akan merujuk pada instance "mobil_2". 
+
+Hal ini memungkinkan setiap objek baru tersebut memiliki atribut masing-masing, tidak lagi atribut kelas. Jadi, kita dapat mengubah atribut suatu objek tanpa memengaruhi objek lainnya. 
+
+Dengan begitu, self.warna yang didefinisikan dalam constructor adalah jenis dari atribut instance atau atribut objek, yakni atribut yang terkait dengan instance atau objek itu sendiri, bukan kelas. 
+
+Mari kita kembali pada contoh kelas mobil dengan atribut warna. Kali ini kita akan mengubah nilai atribut kembali, tetapi perbedaannya adalah atribut tersebut bukan jenis atribut kelas melainkan atribut instance.
+
+main.py
+1
+class Mobil:
+2
+    # Atribut Instance
+3
+    def __init__(self):
+4
+        self.warna = 'Merah'
+5
+        
+6
+mobil_1 = Mobil()
+7
+mobil_2 = Mobil()
+8
+​
+9
+print(mobil_1.warna)
+10
+print(mobil_2.warna)
+11
+​
+12
+# Mengubah atribut instance
+13
+mobil_1.warna = "Hitam"
+14
+​
+15
+# Menampilkan kembali atribut warna
+16
+print(mobil_1.warna)
+17
+print(mobil_2.warna)
+18
+​
+19
+"""
+20
+Output:
+21
+Merah
+22
+Merah
+23
+Hitam
+24
+Merah
+25
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat kelas bernama Mobil dengan atribut instance adalah warna dan nilainya merah. Selanjutnya, kita membuat dua instance baru bernama "mobil_1" dan "mobil_2". Jika kita cetak atribut kedua objek tersebut ke layar, hasilnya adalah "Merah" untuk kedua atribut tersebut.
+
+Selanjutnya kita ubah atribut instance pada instance "mobil_1" dengan sintaks mobil_1.warna = "Hitam". Sintaks ini mengganti atribut objek tersebut dari awalnya merah menjadi hitam.
+
+Untuk mengetahui perbedaannya, kita cetak kembali kedua instance tersebut menggunakan fungsi "print()". Hasilnya atribut instance mobil_1 berubah menjadi hitam, sedangkan instance mobil_2 tetap merah. 
+
+Jika terlintas dalam benak Anda, mengapa sintaksnya mobil_1.warna = "Hitam" bukan Mobil.warna = "Hitam"? Jawabannya dapat dilihat jika Anda mengubah kode di atas dengan kode tersebut. Silakan untuk melakukan copy-paste terhadap sintaks yang dimaksud. 
+
+Output yang dihasilkan adalah program menampilkan "Merah" semuanya. Artinya atribut pada setiap objeknya tidak terjadi perubahan. Hal ini karena pada kelas yang kita buat tidak memiliki atribut kelas, sedangkan sintaks Mobil.warna = "Hitam" bertujuan untuk mengubah jenis atribut kelas. 
+
+Jika sebelumnya kita hanya menggunakan parameter self saja dalam class constructor, parameter lain pun dapat ditambahkan sesuai kebutuhan.
+
+main.py
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+        
+7
+mobil_1 = Mobil('Merah', 'DicodingCar', 160)
+8
+​
+9
+print(mobil_1.warna)
+10
+print(mobil_1.merek)
+11
+print(mobil_1.kecepatan)
+12
+​
+13
+"""
+14
+Output:
+15
+Merah
+16
+DicodingCar
+17
+160
+18
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat kelas yang sama, tetapi ada perbedaan dengan yang sebelumnya. Perbedaannya adalah pada kode di atas, kita membuat parameter tambahan, yaitu "warna, merek, kecepatan". Parameter tambahan ini membuat kita perlu menggunakan argumen ketika memanggil kelas mobil "Mobil('Merah', 'DicodingCar', 160)". Jika Anda memanggil kelas tanpa argumen yang disebutkan, program akan menyebabkan error.
+
+Hal penting yang perlu diketahui adalah perbedaan antara kode di atas dengan kode sebelumnya. Sebelumnya, kode hanya menggunakan parameter "self". Lalu, jika kita menggunakan kode seperti berikut.
+
+def __init__(self):
+        self.warna = 'Merah'
+Kode di atas berarti kita langsung menentukan nilai default terhadap suatu objek. Itulah sebabnya ketika proses instansiasi, program tidak memunculkan error walaupun kita tidak memberikan argumen apa pun.
+
+Lain halnya pada kode di bawah ini.
+
+def __init__(self, warna, merek, kecepatan):
+        self.warna = warna
+        self.merek = merek
+        self.kecepatan = kecepatan
+Semua atribut yang telah ditetapkan tidak memiliki nilai default. Ketika membuat sebuah objek dari kelas tersebut, kita perlu menambahkan argumen tambahan seperti yang disebutkan, yaitu warna, merek, kecepatan. Inilah sebabnya ketika proses instansiasi atau pembuatan objek, program akan memunculkan error jika tidak memberikan argumen apa pun.
+
+
+
+Method
+Setelah atribut, saatnya membahas method sebagai perilaku atau tindakan yang dapat dilakukan oleh objek atau kelas. Pada pembuatan metode , sebenarnya kita membuat fungsi di dalam kelas itu sendiri. Dengan kata lain, kita menggunakan kata kunci "def" atau membuat fungsi sebagai suatu metode. Python membagi method menjadi tiga jenis.
+
+Metode dari object (object method).
+Metode secara statis (static method).
+Metode dari class (class method).
+Dua metode terakhir sangat erat kaitannya dengan konsep dekorator. Kita tidak akan membahasnya lebih detail mengenai dekorator, tetapi secara umum saja. 
+
+Dekorator adalah fungsi dalam Python yang mengembalikan fungsi lain, biasanya diawali dengan sintaks "@" di awal.  Contoh sederhana dekorator sebagai berikut.
+
+main.py
+("Sebelum fungsi dieksekusi.")
+1
+def my_decorator(func):
+2
+    def wrapper():
+3
+        print("Sebelum fungsi dieksekusi.")
+4
+        func()
+5
+        print("Setelah fungsi dieksekusi.")
+6
+    return wrapper
+7
+​
+8
+# Dekorasi fungsi dengan decorator
+9
+@my_decorator
+10
+def say_hello():
+11
+    print("Hello, world!")
+12
+​
+13
+# Memanggil fungsi yang sudah didekorasi
+14
+say_hello()
+15
+​
+16
+"""
+17
+Output:
+18
+Sebelum fungsi dieksekusi.
+19
+Hello, world!
+20
+Setelah fungsi dieksekusi.
+21
+"""
+ Input  Reset
+ Jalankan
+
+            
+Penjelasan dari contoh di atas adalah berikut.
+
+Pertama, kita mendefinisikan sebuah fungsi bernama my_decorator. Dekorator ini menerima sebuah fungsi func sebagai parameternya.
+Dalam fungsi my_decorator, kita mendefinisikan fungsi wrapper(). Fungsi wrapper() bertindak sebagai "pembungkus" yang menambahkan perilaku sebelum dan setelah eksekusi dari fungsi func.
+Setelah itu, fungsi  my_decorator mengembalikan (return) fungsi wrapper sebagai hasilnya. Return ini juga menyebabkan fungsi wrapper dijalankan.
+Kemudian, kita mendefinisikan fungsi say_hello(). Fungsi ini akan menjadi target dekorasi.
+Untuk mendekorasi say_hello(), kita menggunakan simbol "@" diikuti dengan nama dekorator, yaitu @my_decorator sebelum mendefinisikan fungsi say_hello.
+Jadi, secara alur, ketika fungsi say_hello() dipanggil, sebenarnya yang dieksekusi adalah fungsi wrapper() yang menjadi hasil dari dekorasi. Oleh karena itu, pesan "Sebelum fungsi dieksekusi." dicetak terlebih dahulu, kemudian fungsi say_hello() dieksekusi dan mencetak "Hello, world!", lalu akhirnya, pesan "Setelah fungsi dieksekusi." dicetak.
+Dekorator sangat berguna untuk menambahkan fungsionalitas tambahan pada suatu fungsi atau metode tanpa harus mengubah kode asli dari fungsi tersebut. Anda bisa membaca lebih dalam mengenai dekorator pada laman ini.
+
+
+
+Metode dari Objek (Object Method)
+Jenis pertama adalah method yang melekat terhadap objek. Ciri dari jenis metode ini adalah adanya parameter self yang merujuk pada objek saat ini. Perhatikan contoh di bawah ini, asumsikan bahwa kita membuat kelas mobil yang sama seperti sebelumnya. Namun, kita menambahkan metode bernama "tambah_kecepatan" dan setiap metode ini dipanggil maka kecepatan mobil akan bertambah 10.
+
+main.py
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+​
+7
+    def tambah_kecepatan(self):
+8
+        self.kecepatan += 10
+9
+​
+10
+mobil_1 = Mobil("Merah", "DicodingCar", 160)
+11
+print("Sebelum ditambahkan: ")
+12
+print(mobil_1.kecepatan)
+13
+​
+14
+mobil_1.tambah_kecepatan()        # Memanggil metode tambah_kecepatan.
+15
+​
+16
+print("Setelah ditambahkan: ")
+17
+print(mobil_1.kecepatan)
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat kelas Mobil dan mengimplementasikannya pada objek bernama "mobil_1". Dalam kelas tersebut, kita memiliki constructor ('__init__') yang digunakan untuk menginisialisasi atribut 'warna', 'merek' dan 'kecepatan' pada objek yang dibuat (mobil_1).
+
+Ketika objek 'mobil_1' dibuat dari kelas Mobil, kita memberikan beberapa argumen yang menjadikannya atribut dari objek tersebut, yakni 'Merah' sebagai warna mobil, 'DicodingCar' sebagai merek, dan '160' sebagai kecepatan awal mobil tersebut.
+
+Dalam kelas Mobil yang dibuat, kita menambahkan method berupa fungsi "tambah_kecepatan" dan digunakan untuk meningkatkan kecepatan mobil. Setiap metode ini dipanggil, kecepatan mobil akan bertambah sebesar 10.
+
+Pada bagian kode berikut lebih tepatnya, kita memanggil metode yang telah dibuat tersebut.
+
+print("\nSebelum ditambahkan: ")
+print(mobil_1.kecepatan)
+ 
+mobil_1.tambah_kecepatan()        # Memanggil metode tambah_kecepatan.
+ 
+print("\nSetelah ditambahkan: ")
+print(mobil_1.kecepatan)
+Hasilnya bisa kita lihat pada output dalam program tersebut, bahwa sebelum ditambahkan, kecepatannya adalah 160. Namun setelah itu, kecepatannya bertambah menjadi 170.
+
+Jika menyadarinya, perbedaan ketika Anda memanggil method dan atribut terletak pada penempatan tanda kurung “()”. Ketika memanggil atribut, Anda cukup menyebutkan nama atribut tersebut tanpa ada tanda kurung “()”, contohnya “mobil_1.kecepatan”. Namun untuk memanggil method, Anda harus menempatkan tanda kurung “()” setelahnya, contohnya “mobil_1.tambah_kecepatan()”.
+
+Selain itu, saat kode di bawah ini dieksekusi,
+
+mobil_1.tambah_kecepatan()
+ia setara dengan kita melakukan kode berikut.
+
+Mobil.tambah_kecepatan(mobil_1)
+Hal inilah yang dimaksud dengan self pada object method karena ketika kita memanggil object method, argumen pertamanya adalah objek dia sendiri (self).
+
+Namun, object method adalah metode yang melekat terhadap suatu objek dan menggunakan parameter self. Jadi, kita tidak bisa memanggil metode ini langsung melalui kelasnya.
+
+main.py
+  Mobil.tambah_kecepatan()
+1
+class Mobil:
+2
+    def __init__(self, warna, merek, kecepatan):
+3
+        self.warna = warna
+4
+        self.merek = merek
+5
+        self.kecepatan = kecepatan
+6
+    
+7
+    def tambah_kecepatan(self):
+8
+        self.kecepatan += 10
+9
+        
+10
+  Mobil.tambah_kecepatan()
+11
+​
+12
+"""
+13
+Output:
+14
+Traceback (most recent call last):
+15
+  File "/home/glot/main.py", line 10, in <module>
+16
+    Mobil.tambah_kecepatan()
+17
+TypeError: tambah_kecepatan() missing 1 required positional argument: 'self'
+18
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita perlu membuat kelas yang sama seperti sebelumnya. Namun kali ini, kita memanggil object method melalui kelasnya secara langsung. Hal ini menyebabkan error karena kita mendefinisikan fungsi tambah_kecepatan sebagai object method. Artinya, metode ini memerlukan parameter self dan merujuk pada objek yang dibuat, sedangkan kita memanggilnya melalui kelas tanpa membuat objek.
+
+Jika ingin membuat metode yang tidak melekat pada objek, kita bisa menggunakan class method atau static method.
+
+
+
+Metode secara Statis (Static Method)
+Static method adalah fungsi atau method pada sebuah kelas yang bersifat statis. Artinya, metode atau fungsi ini bersifat independen dan tidak terikat pada instance kelas. Metode ini dapat dianggap seperti kita membuat fungsi seperti biasa, tetapi didefinisikan dalam kelas sehingga ini menjadi perilaku untuk kelas tersebut. Untuk membuat static method, Anda bisa menambahkan dekorator @staticmethod tepat sebelum mendefinisikan fungsi atau metode.
+
+main.py
+print("Ini adalah metode dari kelas Mobil")
+1
+class Mobil:
+2
+    def __init__(self, merek):
+3
+        self.merek = merek
+4
+    
+5
+    @staticmethod
+6
+    def intro_mobil():
+7
+        print("Ini adalah metode dari kelas Mobil")
+8
+        
+9
+Mobil.intro_mobil()
+10
+mobil_1 = Mobil("DicodingCar")
+11
+mobil_1.intro_mobil()
+12
+​
+13
+"""
+14
+Output:
+15
+Ini adalah metode dari kelas Mobil
+16
+Ini adalah metode dari kelas Mobil
+17
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat sebuah fungsi bernama intro_mobil() yang menjadi metode atau perilaku dari kelas Mobil dengan diawali oleh dekorator @staticmethod. Fungsi atau metode yang kita buat bernama intro_mobil dan mencetak pesan "ini adalah metode dari kelas Mobil".
+
+
+
+Metode dari Kelas (Class Method)
+Metode terakhir adalah class method yang termasuk jenis metode cukup spesial dalam Python. Jika object method identik dengan parameter self yang merujuk pada objek, class method juga memerlukan sebuah parameter yang merujuk pada kelas. Mari buat contoh yang sama dengan sebelumnya, tetapi kali ini menggunakan class method.
+
+main.py
+rint("Ini adalah metode dari kelas Mobil")
+1
+class Mobil:
+2
+    def __init__(self, merek):
+3
+        self.merek = merek
+4
+​
+5
+    @classmethod
+6
+    def intro_mobil(cls):
+7
+        print("Ini adalah metode dari kelas Mobil")
+8
+        
+9
+Mobil.intro_mobil()
+10
+mobil_1 = Mobil("DicodingCar")
+11
+mobil_1.intro_mobil()
+12
+​
+13
+"""
+14
+Output:
+15
+Ini adalah metode dari kelas Mobil
+16
+Ini adalah metode dari kelas Mobil
+17
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh di atas, kita membuat program yang sama, tetapi ada sedikit perbedaan, yakni dekorator @classmethod digunakan. Perhatikan baik-baik pada bagian kode berikut.
+
+@classmethod
+def intro_mobil(cls):
+    print("Ini adalah metode dari kelas Mobil")
+Pada bagian fungsi intro_mobil, kita menambahkan parameter cls. Ini adalah parameter wajib dalam menggunakan dekorator @classmethod.
+
+Catatan:
+Penamaan cls merupakan kesepakatan bersama dari programmer Python untuk memudahkan pembacaan kode. Anda dapat mengganti namanya, tidak harus cls.
+
+Mengapa demikian? Sebab, ketika menggunakan class method, kita akan menambahkan argumen tambahan pada posisi pertama berupa kelas itu sendiri. Perhatikan kode berikut.
+
+main.py
+1
+class Mobil:
+2
+    def __init__(self, merek):
+3
+        self.merek = merek
+4
+​
+5
+    @classmethod
+6
+    def intro_mobil(*args):
+7
+        print(args)
+8
+        
+9
+Mobil.intro_mobil()
+10
+mobil_1 = Mobil("DicodingCar")
+11
+mobil_1.intro_mobil()
+12
+​
+13
+"""
+14
+Output:
+15
+(<class '__main__.Mobil'>,)
+16
+(<class '__main__.Mobil'>,)
+17
+"""
+ Input  Reset
+ Jalankan
+
+            
+Pada contoh kode di atas, fungsi intro_mobil() menggunakan variadic positional parameter, yakni *args untuk melihat argumen yang diterima oleh fungsi tersebut. Perhatikan lebih baik output-nya, kode di atas menerima sebuah parameter, yakni kelas Mobil walaupun ketika pemanggilan fungsi intro_mobil() kita tidak memberikan argumen apa pun.
+
+Mobil.intro_mobil()
+mobil_1 = Mobil("DicodingCar")
+mobil_1.intro_mobil()
+Ini membuktikan bahwa ketika Anda menggunakan class method, Python akan secara otomatis menambahkan kelas tersebut sebagai argumen pertama.
