@@ -1,0 +1,55 @@
+Library Parser
+Library parser pada Python menyediakan fasilitas untuk menguraikan kode Python menjadi struktur data yang dapat diproses dan dianalisis. Anda dapat menggunakan Getopt atau ArgParse.
+
+Getopt dokumentasi: https://docs.python.org/3.8/library/getopt.html
+argparse documentasi: https://docs.python.org/3.8/library/argparse.html
+
+Argument parser bermanfaat jika kita ingin membuat program atau skrip kecil yang langsung menerima parameter pada saat pemanggilan program. Hal ini biasa digunakan dalam pemanggilan aplikasi atau skrip di CLI/terminal *nix-based, misalnya Linux dan MacOS. Contoh perintah dimaksud adalah berikut.
+
+python panggildicoding.py -o
+
+Contoh tindakan menambahkan Argument yang bersifat opsional/tidak wajib dengan menggunakan ArgParse adalah berikut.
+
+import argparse
+ 
+parser = argparse.ArgumentParser()
+parser.add_argument('-o', '--output', action='store_true', help="tampilkan output")
+args = parser.parse_args()
+ 
+if args.output:
+   print("Halo, ini merupakan sebuah output dari panggildicoding.py")
+Jadi, pada saat dijalankan, ada beberapa hal yang perlu diperhatikan, yaitu berikut.
+
+Berkas panggildicoding.py dapat menerima parameter -o atau --output.
+Jika kita memanggil berkas tanpa parameter -o, berkas tidak akan menampilkan apa pun.
+Jika kita memanggil dengan -o atau --output, berkas akan menampilkan Halo, ini merupakan sebuah output dari panggildicoding.py.
+Jika kita memanggil --help, tampil help dengan penjelasan "tampilkan output".
+dos:45e3292bdc386b41b95c2e8018f4f0e320230823203337.png
+Kita juga bisa membuat argumennya bersifat wajib. Modifikasi berkas panggildicoding.py menjadi seperti berikut.
+
+import argparse
+ 
+parser = argparse.ArgumentParser()
+parser.add_argument('-n', '--nama', required=True, help="Masukkan Nama Anda")
+args = parser.parse_args()
+ 
+print("Terima kasih telah menggunakan panggildicoding.py, "+args.nama)
+Jadi, pada saat dijalankan, ada beberapa hal yang menjadi perhatian seperti berikut.
+
+Berkas panggildicoding.py harus dipanggil dengan parameter -n atau --nama.
+Jika kita memanggil berkas tanpa parameter -n, berkas akan meminta parameter n atau nama.
+Jika kita memanggil dengan -n NAMAKITA atau --nama NAMAKITA, berkas akan menampilkan Terima kasih telah menggunakan panggildicoding.py NAMAKITA.
+Jika kita memanggil --help, tampil help dengan penjelasan "Masukkan Nama Anda".
+dos:39c2a3f0dfd50b1dce885c2268cb136220230823203221.jpeg 
+Anda dapat menyuplai lebih dari satu argumen dengan menambahkan parser.add_argument sejumlah yang Anda inginkan. 
+
+Ayo berlatih melengkapi script sebelumnya agar mampu menampilkan hasil berikut.
+
+dos:c14fceacf0cf7aafb887adb6b322adb020230823203220.jpeg
+
+Ketentuan skrip sebagai berikut.
+
+Berkas panggildicoding.py harus dipanggil dengan parameter n/nama dan t/tanggallahir.
+Format tanggal lahir adalah dd-mm-yyyy.
+Jika kita memanggil berkas tanpa parameter, berkas akan menolak.
+Jika usia pemanggil saat ini kurang dari 30 tahun, tambahkan panggilan kakak, selain itu gunakan panggilan bapak sebelum NAMAKITA.
